@@ -6,6 +6,7 @@ import BankCards from "../components/BankCards";
 import GTB from "../public/GTB.svg";
 import FirstBank from "../public/FirstBank.svg";
 import Opay from "../public/Opay.svg";
+import Zenith from "../public/Zenith.svg";
 
 type BankCards = BankCard[];
 type BankCard = {
@@ -38,6 +39,13 @@ export default function Home() {
       amount: "744,000",
       account_no: "80 **** 1234",
       bank_name: "OPAY",
+    },
+    {
+      image: Zenith,
+      alt: "Zenith",
+      amount: "991,910",
+      account_no: "22 **** 1024",
+      bank_name: "Zenith Bank",
     },
   ];
   return (
