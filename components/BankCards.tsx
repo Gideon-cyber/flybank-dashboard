@@ -14,7 +14,7 @@ type Props = {
 
 const BankCards = ({ bank_name, image, alt, account_no, amount }: Props) => {
   return (
-    <div className="bg-lightBlue w-[314.41px] h-[170px] px-[24px] rounded-[16px] py-[28px]">
+    <div className="bg-lightBlue w-[100%] h-[170px] px-[24px] rounded-[16px] py-[28px]">
       <div className="flex flex-col justify-between h-full">
         <div className="flex items-start justify-between gap-[32px]">
           <div className="flex flex-col gap-[6px]">

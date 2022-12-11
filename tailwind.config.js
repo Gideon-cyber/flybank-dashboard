@@ -19,6 +19,7 @@ module.exports = {
         lightBlue: "#F6FAFF",
         secWhite: "#FFFFFF",
         lightGrey: "#6B7280",
+        textColor: "#1F2937",
       },
       fontWeight: {
         "b-300": "300",

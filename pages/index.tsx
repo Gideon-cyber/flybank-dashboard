@@ -7,6 +7,8 @@ import GTB from "../public/GTB.svg";
 import FirstBank from "../public/FirstBank.svg";
 import Opay from "../public/Opay.svg";
 import Zenith from "../public/Zenith.svg";
+import Transactions from "../components/Transactions";
+import Expenses from "../components/Expenses";
 
 type BankCards = BankCard[];
 type BankCard = {
@@ -56,15 +58,15 @@ export default function Home() {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="w-full h-screen py-[10px]">
+      <main className="w-full h-full py-[10px]">
         <Header />
         <div className="flex items-center gap-6 px-[50px] py-[12px]">
           <AccountInfo funds="2,300,210" account_no="0919 2333 4561 0000" />
           <StandingOrders />
         </div>
-        <div className="py-[12px] pl-[50px] flex items-center gap-[16px]">
+        <div className="py-[12px] px-[50px] flex items-center gap-[16px]">
           {BankCard.map((bankCard: BankCard, index: number) => (
-            <div key={index}>
+            <div key={index} className="w-[25%]">
               <BankCards
                 account_no={bankCard.account_no}
                 image={bankCard.image}
@@ -74,6 +76,10 @@ export default function Home() {
               />
             </div>
           ))}
+        </div>
+        <div className="flex items-start px-[50px] py-[12px] gap-[24px]">
+          <Transactions />
+          <Expenses />
         </div>
       </main>
     </div>

@@ -11,10 +11,11 @@ const AccountInfo = ({ funds, account_no }: Props) => {
       <div className="flex items-start justify-between">
         <div className="flex flex-col items-start gap-[50px]">
           <div className="flex flex-col items-start gap-2">
-            <span className="text-[14px] leading-[19px]">Available funds</span>
-            <h3 className="text-[24px] leading-[32.2px] font-b-600">
-              ₦{funds}
-            </h3>
+            <span className="text-[14px] leading-[19px]">Main account</span>
+            <h4 className="font-b-600 text-[18px] leading-[28px] m-0">
+              Flybank Savings Account
+            </h4>
+            <span className="text-[16px] leading-[24px]">{account_no}</span>
           </div>
           <div className="flex items-start gap-[16px]">
             <button
@@ -32,11 +33,8 @@ const AccountInfo = ({ funds, account_no }: Props) => {
           </div>
         </div>
         <div className="flex flex-col items-end gap-2">
-          <span className="text-[14px] leading-[19px]">Main account</span>
-          <h4 className="font-b-600 text-[18px] leading-[28px] m-0">
-            Flybank Savings Account
-          </h4>
-          <span className="text-[16px] leading-[24px]">{account_no}</span>
+          <span className="text-[14px] leading-[19px]">Available funds</span>
+          <h3 className="text-[24px] leading-[32.2px] font-b-700">₦{funds}</h3>
         </div>
       </div>
     </div>
