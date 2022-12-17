@@ -25,17 +25,17 @@ const TransactionDetails = ({
   return (
     <div className="flex items-center justify-center h-[55px] gap-[56px]">
       <div className="w-[50px] h-[15px] flex items-center">
-        <span className="font-b-500 text-[12px] leading-[15px] text-textColor text-left">
+        <span className="font-b-500 text-[12px] leading-[15px] text-textColor dark:text-white text-left">
           {date}
         </span>
       </div>
       <div className="w-[120px] h-[17px] flex items-center">
-        <span className="text-textColor text-[14px] leading-[17px] font-b-500 text-left">
+        <span className="text-textColor dark:text-white text-[14px] leading-[17px] font-b-500 text-left">
           {name}
         </span>
       </div>
       <div className="w-[100px] h-[17px] flex items-center">
-        <span className="text-textColor text-[14px] leading-[17px] font-b-400 text-left">
+        <span className="text-textColor dark:text-white text-[14px] leading-[17px] font-b-400 text-left">
           {type}
         </span>
       </div>
@@ -52,7 +52,7 @@ const TransactionDetails = ({
         <Tags background={background} color={color} text={name} />
       </div>
       <div className="w-[120px] h-[17px] flex items-center justify-end">
-        <span className="text-[14px] leading-[17px] font-b-500 text-textColor">
+        <span className="text-[14px] leading-[17px] font-b-500 text-textColor dark:text-white">
           -₦{amount}
         </span>
         <Image src={ArrowDown} alt="arrow-down" />

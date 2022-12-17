@@ -3,10 +3,7 @@ import Header from "../components/Header";
 import AccountInfo from "../components/AccountInfo";
 import StandingOrders from "../components/StandingOrders";
 import BankCards from "../components/BankCards";
-import GTB from "../public/GTB.svg";
-import FirstBank from "../public/FirstBank.svg";
-import Opay from "../public/Opay.svg";
-import Zenith from "../public/Zenith.svg";
+import { useAppSelector } from "../redux/hook";
 import Transactions from "../components/Transactions";
 import Expenses from "../components/Expenses";
 
@@ -20,53 +17,28 @@ type BankCard = {
 };
 
 export default function Home() {
-  const BankCard: BankCards = [
-    {
-      image: GTB,
-      alt: "GTB",
-      amount: "562,000",
-      account_no: "80 **** 1234",
-      bank_name: "Guaranty Trust Bank",
-    },
-    {
-      image: FirstBank,
-      alt: "FirstBank",
-      amount: "2,300",
-      account_no: "80 **** 1234",
-      bank_name: "First Bank",
-    },
-    {
-      image: Opay,
-      alt: "Opay",
-      amount: "744,000",
-      account_no: "80 **** 1234",
-      bank_name: "OPAY",
-    },
-    {
-      image: Zenith,
-      alt: "Zenith",
-      amount: "991,910",
-      account_no: "22 **** 1024",
-      bank_name: "Zenith Bank",
-    },
-  ];
+  const { BankCard, darkMode } = useAppSelector((state) => state.root);
   return (
-    <div className="font-Inter">
+    <div
+      className={`font-Inter ${
+        darkMode ? "dark" : ""
+      } scrollbar scrollbar-track-primBlue scrollbar-thumb-primBlue scrollbar-thumb-rounded-full scrollbar-track-rounded-full`}
+    >
       <Head>
         <title>FlyBank Dashboard</title>
         <meta name="description" content="A dashboard for FlyBank" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <main className="w-full h-full py-[10px]">
+      <main className="w-full h-full py-[10px] bg-white dark:bg-[#0D0D0D]">
         <Header />
-        <div className="flex items-center gap-6 px-[50px] py-[12px]">
+        <div className="flex flex-col items-center gap-6 px-[16px] md:px-[50px] py-[12px] md:flex-row">
           <AccountInfo funds="2,300,210" account_no="0919 2333 4561 0000" />
           <StandingOrders />
         </div>
-        <div className="py-[12px] px-[50px] flex items-center gap-[16px]">
+        <div className="py-[12px] px-[16px] md:px-[50px] flex items-center gap-[16px] flex-wrap md:flex-nowrap">
           {BankCard.map((bankCard: BankCard, index: number) => (
-            <div key={index} className="w-[25%]">
+            <div key={index} className="w-[100%] md:w-[25%]">
               <BankCards
                 account_no={bankCard.account_no}
                 image={bankCard.image}
@@ -77,7 +49,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="flex items-start px-[50px] py-[12px] gap-[24px]">
+        <div className="flex flex-col md:flex-row items-start px-[16px] md:px-[50px] py-[12px] gap-[24px]">
           <Transactions />
           <Expenses />
         </div>

@@ -7,7 +7,7 @@ type Props = {};
 
 const StandingOrders = (props: Props) => {
   return (
-    <div className="bg-primBlue rounded-[16px] w-[507px] h-[260px] p-[33px]">
+    <div className="bg-primBlue rounded-[16px] w-[100%] md:w-[507px] h-[260px] p-[20px] md:p-[33px] shadow">
       <div className="flex flex-col items-start justify-between h-full">
         <div className="flex items-start justify-between w-full">
           <div className="flex flex-col gap-[16px]">
@@ -23,7 +23,7 @@ const StandingOrders = (props: Props) => {
           <Image src={LoopPic} alt="loopPic" />
         </div>
         <div className="flex items-end justify-between w-full">
-          <button className="bg-[#0C0FCE] p-[10px] text-[12px] leading-[16px] flex items-center rounded-[5px] text-[#D8D2FB]">
+          <button className="bg-[#0C0FCE] p-[10px] text-[8px] md:text-[12px] leading-[16px] flex items-center rounded-[5px] text-[#D8D2FB]">
             Define standing order
           </button>
           <Image src={Calender} alt="Calender" />

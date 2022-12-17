@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -20,6 +21,7 @@ module.exports = {
         secWhite: "#FFFFFF",
         lightGrey: "#6B7280",
         textColor: "#1F2937",
+        darkColor: "#1D1D1D",
       },
       fontWeight: {
         "b-300": "300",
@@ -33,5 +35,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
