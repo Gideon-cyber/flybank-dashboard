@@ -4,6 +4,7 @@ import ArrowDown from "../public/Arrowdown.svg";
 import Chart from "../public/Chart.svg";
 import Tags from "./Tags";
 import { useAppSelector } from "../redux/hook";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -23,10 +24,57 @@ type Tag = {
 type Tags = Tag[];
 
 const Expenses = (props: Props) => {
-  const { Details, Tag, darkMode } = useAppSelector((state) => state.root);
+  const Details: Details = [
+    { tag: "Daily", amount: "24,001" },
+    { tag: "Weekly", amount: "77,000" },
+    { tag: "Monthly", amount: "260,000" },
+  ];
+
+  const Tag: Tags = [
+    {
+      background: "rgba(166, 55, 176, 0.25)",
+      color: "#A637B0",
+      text: "Bills",
+    },
+    {
+      background: "rgba(248, 113, 17, 0.3)",
+      color: "#F87111",
+      text: "Clothes",
+    },
+    {
+      background: "rgba(100, 217, 232, 0.25)",
+      color: "#64D9E8",
+      text: "Music",
+    },
+    {
+      background: "rgba(218, 213, 85, 0.25)",
+      color: "#DAD555",
+      text: "Health",
+    },
+    {
+      background: "rgba(58, 58, 58, 0.25)",
+      color: "rgba(58, 58, 58, 0.97)",
+      text: "Others",
+    },
+  ];
+  const { darkMode } = useAppSelector((state) => state.root);
 
   return (
-    <div className="w-[100%] md:w-[553px] h-[458px] rounded-[16px] bg-lightBlue dark:bg-darkColor py-[24px] md:py-[35px] px-[16px] md:px-[37px] shadow">
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 100,
+      }}
+      transition={{
+        duration: 0.7,
+        delay: 1.4,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      className="w-[100%] md:w-[553px] h-[458px] rounded-[16px] bg-lightBlue dark:bg-darkColor py-[24px] md:py-[35px] px-[16px] md:px-[37px] shadow"
+    >
       <div className="flex flex-col gap-[16px]">
         <div className="flex items-center justify-between w-full">
           <h3 className="text-[14px] leading-[18px] md:text-[20px] md:leading-[24px] font-b-700 text-[#1F2937] dark:text-white">
@@ -76,7 +124,7 @@ const Expenses = (props: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 type Props = {
   funds: string;
@@ -7,7 +8,21 @@ type Props = {
 
 const AccountInfo = ({ funds, account_no }: Props) => {
   return (
-    <div className="h-[260px] bg-lightBlue dark:bg-darkColor dark:text-[white] rounded-[16px] px-[16px] py-[24px] md:px-[33px] md:py-[48px] shadow w-[100%] md:w-[65%]">
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: -100,
+      }}
+      transition={{
+        duration: 0.7,
+        delay: 0.5,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      className="h-[260px] bg-lightBlue dark:bg-darkColor dark:text-[white] rounded-[16px] px-[16px] py-[24px] md:px-[33px] md:py-[48px] shadow w-[100%] md:w-[65%]"
+    >
       <div className="flex items-start justify-between">
         <div className="flex flex-col items-start gap-[50px]">
           <div className="flex flex-col items-start gap-2">
@@ -43,7 +58,7 @@ const AccountInfo = ({ funds, account_no }: Props) => {
           </h3>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -12,15 +12,31 @@ import { useState } from "react";
 import { BsFillMoonStarsFill, BsSun } from "react-icons/bs";
 import { useAppSelector, useAppDispatch } from "../redux/hook";
 import { setDarkMode } from "../redux/rootSlice";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 const Header = (props: Props) => {
-  const { navigation, darkMode } = useAppSelector((state) => state.root);
+  const navigation = ["My Account", "Transactions", "Cards", "My Offers"];
+  const { darkMode } = useAppSelector((state) => state.root);
   const dispatch = useAppDispatch();
   const [selected, setSelected] = useState(0);
   return (
-    <header className="flex items-center justify-between px-[16px] md:px-[50px] py-[8px] md:py-[16px]">
+    <motion.header
+      initial={{
+        opacity: 0,
+        y: -100,
+      }}
+      transition={{
+        duration: 0.7,
+        ease: "easeInOut",
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      className="flex items-center justify-between px-[16px] md:px-[50px] py-[8px] md:py-[16px]"
+    >
       <div className="flex items-center gap-2 md:gap-4">
         <div className="w-[16px] h-[16px] md:w-[32px] md:h-[32px] bg-primBlue relative flex items-center justify-center">
           <div className="w-[6px] md:w-[12px] h-[6px] md:h-[12px] bg-white absolute left-0 top-0"></div>
@@ -79,7 +95,7 @@ const Header = (props: Props) => {
           <Image src={darkMode ? Logout1 : Logout} alt="logout" />
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

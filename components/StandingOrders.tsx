@@ -2,12 +2,27 @@ import React from "react";
 import Image from "next/image";
 import LoopPic from "../public/loopPic.svg";
 import Calender from "../public/Calender.svg";
+import { motion } from "framer-motion";
 
 type Props = {};
 
 const StandingOrders = (props: Props) => {
   return (
-    <div className="bg-primBlue rounded-[16px] w-[100%] md:w-[507px] h-[260px] p-[20px] md:p-[33px] shadow">
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: 100,
+      }}
+      transition={{
+        duration: 0.7,
+        delay: 0.7,
+      }}
+      animate={{
+        opacity: 1,
+        x: 0,
+      }}
+      className="bg-primBlue rounded-[16px] w-[100%] md:w-[507px] h-[260px] p-[20px] md:p-[33px] shadow"
+    >
       <div className="flex flex-col items-start justify-between h-full">
         <div className="flex items-start justify-between w-full">
           <div className="flex flex-col gap-[16px]">
@@ -29,7 +44,7 @@ const StandingOrders = (props: Props) => {
           <Image src={Calender} alt="Calender" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
